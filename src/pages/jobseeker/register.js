@@ -1,9 +1,9 @@
-const Login = () => {
+const Register = () => {
     return (
         <div>
-            <h1 className="text-primary display-1">Login</h1>
+            <h1 className="text-primary display-1">Register</h1>
         </div>
     )
 }
 
-export default Login;
+export default Register;
