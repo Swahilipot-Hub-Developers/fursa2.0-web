@@ -136,6 +136,16 @@ const SkillsPage = ({ firstName }) => {
             </div>
           </div>
         </div>
+        {/* Submit Details Button */}
+        <div className="col-md-6 col-12 mt-4 text-center">
+          <button
+            type="submit"
+            className="btn btn-success"
+            style={{ backgroundColor: "#8CC41C", width: "100%" }}
+          >
+            Submit Details
+          </button>
+        </div>
       </div>
     );
   };
