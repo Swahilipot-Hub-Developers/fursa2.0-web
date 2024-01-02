@@ -5,3 +5,8 @@ main{
 .no-line{
   text-decoration-line: none;
 }
+
+/* Styling for the signup btn in registration(Employer) */
+.bg-custom-color {
+  background-color: #8cc41c;
+}
