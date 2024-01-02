@@ -7,7 +7,7 @@ const Login = () => {
             <div className="col-md-6 col-12">
                 <div className="card">
                     <div className="card-title text-center">
-                        <Link href="/" legacyBehavior>
+                        <Link href='/' legacyBehavior>
                             <a className="d-flex no-line justify-content-start px-3 pt-3">← Back to Selection Page</a>
                         </Link>
                         <Image
