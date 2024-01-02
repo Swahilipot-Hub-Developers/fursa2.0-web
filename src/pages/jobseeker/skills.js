@@ -14,7 +14,7 @@ import {
   MdAddAPhoto,
   MdCreditCard,
 } from "react-icons/md"; // Importing react-icons
-import { FaMapMarkerAlt, FaGraduationCap} from "react-icons/fa"; // Importing FaMapMarkerAlt and FaGraduationCap
+import { FaMapMarkerAlt, FaGraduationCap } from "react-icons/fa"; // Importing FaMapMarkerAlt and FaGraduationCap
 
 const SkillsPage = ({ firstName }) => {
   return (
@@ -50,6 +50,10 @@ const SkillsPage = ({ firstName }) => {
                     className="form-control pl-4"
                     id="idNumber"
                     type="text"
+                    pattern="[0-9]*"
+                    onInput={(e) =>
+                      (e.target.value = e.target.value.replace(/\D/, ""))
+                    }
                     required
                   />
                 </div>
