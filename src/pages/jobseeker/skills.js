@@ -115,6 +115,27 @@ const SkillsPage = ({ firstName }) => {
             </div>
           </div>
         </div>
+        {/* Resume Upload Section */}
+        <div className="col-md-6 col-12 mt-4 text-center">
+          <div className="card">
+            <div className="card-body">
+              <h4 className="mb-2">Resume Upload</h4>
+              <label htmlFor="resume" className="form-label visually-hidden">
+                Resume Upload
+              </label>
+              <div className="d-flex align-items-center justify-content-center">
+                {/* Add your upload icon here */}
+                <input
+                  type="file"
+                  className="form-control"
+                  id="resume"
+                  accept=".pdf, .doc, .docx"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   };
