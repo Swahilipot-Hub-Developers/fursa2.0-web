@@ -6,7 +6,17 @@ main{
   text-decoration-line: none;
 }
 
-/* Styling for the signup btn in registration(Employer) */
+.card-link {
+  display: block;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .bg-custom-color {
   background-color: #8cc41c;
 }
