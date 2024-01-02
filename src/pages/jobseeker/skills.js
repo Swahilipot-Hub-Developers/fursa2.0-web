@@ -63,7 +63,7 @@ const SkillsPage = ({ firstName }) => {
                     Select Location
                   </label>
                   <select className="form-control pl-4" id="location" required>
-                    <option value="">Select Location</option>
+                    <option value=""> Location</option>
                     <option value="location1">Location 1</option>
                     <option value="location2">Location 2</option>
                     <option value="location3">Location 3</option>
@@ -120,7 +120,7 @@ const SkillsPage = ({ firstName }) => {
                   <h4 className="mb-2">Select Skills</h4>
                   <MdWork size={20} className="small-icon mr-2" />
                   <select className="form-control pl-4" id="skills" required>
-                    <option value="">Select Skills</option>
+                    <option value="">Skills</option>
                     <option value="skill1">Skill 1</option>
                     <option value="skill2">Skill 2</option>
                     <option value="skill3">Skill 3</option>
@@ -135,7 +135,7 @@ const SkillsPage = ({ firstName }) => {
                     id="workInterests"
                     required
                   >
-                    <option value="">Select Work Interests</option>
+                    <option value="">Work Interests</option>
                     <option value="interest1">Interest 1</option>
                     <option value="interest2">Interest 2</option>
                     <option value="interest3">Interest 3</option>
