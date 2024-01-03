@@ -13,7 +13,7 @@ const Home = () => {
           height={100}
           alt="Fursa Web"
         />
-        <h2>Choose your status:</h2>
+        <h2>Choose your Profile:</h2>
       </div>
       <div className="d-flex gap-3 justify-content-center mt-4">
         <Link href="/jobseeker/login" legacyBehavior>
@@ -23,7 +23,7 @@ const Home = () => {
                 <div className="text-center fs-5">
                   <FaUserTie size={40}/>
                 </div>
-                <h6 className="fw-bold mt-2 m-0 p-0">Job-seeker</h6>
+                <h6 className="fw-bold mt-2 m-0 p-0">Seeker</h6>
               </div>
             </div>
           </a>
