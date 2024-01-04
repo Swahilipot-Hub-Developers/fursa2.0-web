@@ -1,11 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   MdPerson,
   MdSchool,
+  MdWork,
   MdCreditCard,
+  MdAddAPhoto,
 } from "react-icons/md";
 import { FaMapMarkerAlt, FaGraduationCap, FaFileUpload } from "react-icons/fa";
-import { FaX } from 'react-icons/fa6';
 
 const SkillsPage = ({ firstName }) => {
   const [selectedSkills, setSelectedSkills] = useState([]);
@@ -24,33 +25,19 @@ const SkillsPage = ({ firstName }) => {
     ]);
   };
 
-  const handleRemoveSkill = (index) => {
-    setSelectedSkills((prevSkills) => [
-      ...prevSkills.slice(0, index),
-      ...prevSkills.slice(index + 1),
-    ]);
-  };
-
-  const handleRemoveWorkInterest = (index) => {
-    setSelectedWorkInterests((prevInterests) => [
-      ...prevInterests.slice(0, index),
-      ...prevInterests.slice(index + 1),
-    ]);
-  }
-
   return (
     <div className="container mt-4">
       <div className="row">
         <div className="col-md-6 col-12 mt-4">
           <div className="card">
             <div className="card-title text-center">
-              <h3 className="mt-3 mb-0">Hello {firstName}! 👋</h3>
+              <h3 className="mb-3">Hello {firstName}! 👋</h3>
             </div>
             <div className="card-body">
-              <h4 className="mb-2">Personal Details</h4>
               <form>
                 {/* Personal Details Section */}
-                <div className="mb-3">
+                <div className="mb-3 position-relative">
+                  <h4 className="mb-2">Personal Details</h4>
                   <MdPerson size={20} className="small-icon me-2" />
                   <label className="form-label" htmlFor="dateOfBirth">
                     Date of Birth
@@ -93,28 +80,6 @@ const SkillsPage = ({ firstName }) => {
                   </select>
                 </div>
               </form>
-            </div>
-          </div>
-          <div className="card mt-3">
-            <div className="card-body text-center">
-              <h4 className="mb-2">
-                <FaFileUpload size={20} className="small-icon me-2" />
-                Resume Upload
-              </h4>
-              <div className="mb-3">
-                <label htmlFor="resume" className="form-label visually-hidden">
-                  Resume Upload
-                </label>
-                <div className="d-flex align-items-center">
-                  <input
-                    type="file"
-                    className="form-control pl-4"
-                    id="resume"
-                    accept=".pdf, .doc, .docx"
-                    required
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -163,7 +128,7 @@ const SkillsPage = ({ firstName }) => {
                 {/* Select Skills Section */}
                 <div className="mb-3 position-relative">
                   <h4 className="mb-2">Select Skills</h4>
-                  {/*<MdWork size={20} className="small-icon me-2" />*/}
+                  <MdWork size={20} className="small-icon me-2" />
                   <select
                     className="form-control pl-4"
                     id="skills"
@@ -172,7 +137,6 @@ const SkillsPage = ({ firstName }) => {
                   >
                     <option value="" disabled>
                       Skills
-                      
                     </option>
                     <option value="skill1">Skill 1</option>
                     <option value="skill2">Skill 2</option>
@@ -180,31 +144,25 @@ const SkillsPage = ({ firstName }) => {
                   </select>
                   {/* Display selected skills */}
                   {selectedSkills.length > 0 && (
-                  <div>
-                    <div className="selected-skills-text mt-2">
-                      {selectedSkills.map((skill, index) => (
-                        <span key={index} className="selected-skill">
-                          {skill}
-                          <span
-                            className="remove-skill-btn"
-                            onClick={() => handleRemoveSkill(index)}
-                          >
-                            <FaX/>
-                          </span>
-                        </span>
-                      ))}
+                    <div>
+                      <strong>Selected Skills:</strong>
+                      <ul>
+                        {selectedSkills.map((skill, index) => (
+                          <li key={index}>{skill}</li>
+                        ))}
+                      </ul>
                     </div>
-                  </div>
-                )}
+                  )}
                 </div>
                 {/* Work Interests Section */}
                 <div className="mb-3 position-relative">
                   <h4 className="mb-2">Work Interests</h4>
-                  {/*<MdWork size={20} className="small-icon me-2" />*/}
+                  <MdWork size={20} className="small-icon me-2" />
                   <select
                     className="form-control pl-4"
                     id="workInterests"
                     onChange={handleWorkInterestChange}
+                    multiple
                     required
                   >
                     <option value="" disabled>
@@ -216,24 +174,42 @@ const SkillsPage = ({ firstName }) => {
                   </select>
                   {/* Display selected work interests */}
                   {selectedWorkInterests.length > 0 && (
-                    <div className="selected-skills-text mt-2">
-                      <ul className="list-unstyled">
+                    <div>
+                      <strong>Selected Work Interests:</strong>
+                      <ul>
                         {selectedWorkInterests.map((interest, index) => (
-                          <li key={index} className="selected-skill">
-                            {interest}
-                            <span
-                              className="remove-skill-btn"
-                              onClick={() => handleRemoveWorkInterest(index)}
-                            >
-                              <FaX />
-                            </span>
-                          </li>
+                          <li key={index}>{interest}</li>
                         ))}
                       </ul>
                     </div>
                   )}
                 </div>
               </form>
+            </div>
+          </div>
+        </div>
+        {/* Resume Upload Section */}
+        <div className="col-md-6 col-12 mt-4">
+          <div className="card">
+            <div className="card-body text-center">
+              <h4 className="mb-2">
+                <FaFileUpload size={20} className="small-icon me-2" />
+                Resume Upload
+              </h4>
+              <div className="mb-3">
+                <label htmlFor="resume" className="form-label visually-hidden">
+                  Resume Upload
+                </label>
+                <div className="d-flex align-items-center">
+                  <input
+                    type="file"
+                    className="form-control pl-4"
+                    id="resume"
+                    accept=".pdf, .doc, .docx"
+                    required
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -244,7 +220,7 @@ const SkillsPage = ({ firstName }) => {
       <div className="d-flex justify-content-end">
         <button
           type="submit"
-          className="btn btn-success mt-3 mb-5"
+          className="btn btn-success"
           style={{ backgroundColor: "#8CC41C", width: "100%" }}
         >
           Submit Details

@@ -20,29 +20,3 @@ main{
 .bg-custom-color {
   background-color: #8cc41c;
 }
-
-.selected-skills-text {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.selected-skill {
-  background-color: #8cc41c;
-  color: #fff;
-  border-radius: 20px;
-  padding: 4px 10px;
-  margin-right: 10px;
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-.remove-skill-btn {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 12px;
-  margin-left: 5px;
-  padding-bottom: 0.25rem;
-  cursor: pointer;
-}
