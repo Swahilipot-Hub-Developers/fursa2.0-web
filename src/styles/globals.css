@@ -1,3 +1,9 @@
+/**
+* Comments made to give better understanding of the styling done
+* for the sidebar. Make a point of reference to avoid altering
+* and messing up the styles.
+*/
+
 main{
   min-height: 73vh;
 }
@@ -45,4 +51,43 @@ main{
   margin-left: 5px;
   padding-bottom: 0.25rem;
   cursor: pointer;
+}
+
+.sidebar {
+  width: 150px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f8f9fa;
+  padding-top: 20px;
+  transition: width 0.3s;
+}
+
+/* Sidebar styling */
+/* Toggling the minimization of the sidebar by reducing the width */
+
+.minimized {
+  width: 90px;
+}
+
+/* Setting the display to cater for the sidebar */
+.content {
+  flex: 1;
+  padding-left: 200px;
+}
+
+/* Readjusts the content to move to the left (-ve value used to make it possible) */
+.sidebar-minimized {
+  margin-left: -80px;
+}
+
+.toggle-button {
+  position: fixed;
+  top: 5px;
+  left: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background: none;
 }

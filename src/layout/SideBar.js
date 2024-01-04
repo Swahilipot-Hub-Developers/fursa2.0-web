@@ -1,15 +1,23 @@
-// components/Sidebar.js
-import React from 'react';
-import { Nav } from 'react-bootstrap';
+import Link from 'next/link';
+import { ListGroup } from 'react-bootstrap';
 
-const Sidebar = () => {
+const Sidebar = ({isMinimized}) => {
   return (
-    <Nav defaultActiveKey="/home" className="flex-column">
-      <Nav.Link href="/home">Home</Nav.Link>
-      <Nav.Link href="/trending">Trending</Nav.Link>
-      <Nav.Link href="/subscriptions">Subscriptions</Nav.Link>
-      {/* Add more links as needed */}
-    </Nav>
+    <div className={`sidebar ${isMinimized ? 'minimized' : ''}`}>
+      <ListGroup className="mt-3">
+        <Link href="/">
+          <ListGroup.Item action active>
+          Work in Progress
+          </ListGroup.Item>
+        </Link>
+        <Link href="/about">
+          <ListGroup.Item action>Work in Progress</ListGroup.Item>
+        </Link>
+        <Link href="/contact">
+          <ListGroup.Item action>Work in Progress</ListGroup.Item>
+        </Link>
+      </ListGroup>
+    </div>
   );
 };
 
