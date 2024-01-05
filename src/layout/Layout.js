@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
         <Sidebar isMinimized={isSidebarMinimized} />
         <main className='container content'>{children}</main>
         <button className="toggle-button" onClick={toggleSidebar}>
-          {isSidebarMinimized ? <FaLeftLong /> : <FaBars />}
+          {isSidebarMinimized ? <FaBars /> : <FaLeftLong />}
         </button>
       </div>
       {/**Custom d-flex for the sidebar functionality to avoid intefering

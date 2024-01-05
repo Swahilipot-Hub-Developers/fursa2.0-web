@@ -23,7 +23,7 @@ const Home = () => {
                 <div className="text-center fs-5">
                   <FaUserTie size={40}/>
                 </div>
-                <h6 className="fw-bold mt-2 m-0 p-0">Job-seeker</h6>
+                <h6 className="fw-bold mt-2 m-0 p-0">Seeker</h6>
               </div>
             </div>
           </a>
