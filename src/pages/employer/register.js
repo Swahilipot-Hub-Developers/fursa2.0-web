@@ -6,7 +6,7 @@ const Register = () => {
         <div>
             <h1 className="text-primary display-1">Register</h1>
 
-            <div className= "align-items-center mt-4 d-flex justify-content-center">
+            <div className="align-items-center mt-4 d-flex justify-content-center">
                 <div className="col-md-6 col-12">
                     <div className="card">
                         <div className="card-title text-center">
@@ -24,28 +24,43 @@ const Register = () => {
                         <div className="card-body">
 
                             <form>
-                                <label className="form-label" htmlFor="first_name">First Name</label>
+                                <label className="form-label" htmlFor="first_name">Company Name</label>
                                 <input
                                     className="form-control"
                                     id="first_name"
                                     type="text"
                                     required
                                 />
-                                <label className="form-label mt-2" htmlFor="last_name">Last Name</label>
-                                <input
+                                <label className="form-label mt-2" htmlFor="description">Brief Description</label>
+                                <textarea
                                     className="form-control"
-                                    id="second_name"
-                                    type="text"
+                                    id="description"
                                     required
-                                />
-                                <label className="form-label mt-2" htmlFor="phone">Phone</label>
+                                ></textarea>
+
+
+                                <label className="form-label mt-2" htmlFor="employer_type">Employer Type</label>
+                                <select
+                                    className="form-control"
+                                    id="employer_type"
+                                    required
+                                >
+                                    <option value='' disable> 
+                                    
+                                    </option>
+                                     
+                                    <option value="NGO">NGO</option>
+                                    <option value="STARTUP">Startup</option>
+                                    <option value="Government">Government</option>
+                                </select>
+                                <label className="form-label mt-2" htmlFor="phone"> Company Phone</label>
                                 <input
                                     className="form-control"
                                     id="phone"
                                     type="tel"
                                     required
                                 />
-                                <label className="form-label mt-2" htmlFor="email_address">Email Address</label>
+                                <label className="form-label mt-2" htmlFor="email_address">Company Email </label>
                                 <input
                                     className="form-control"
                                     id="email_address"
@@ -59,7 +74,6 @@ const Register = () => {
                                     type="password"
                                     required
                                 />
-
                                 <div className="col-12 mt-4">
                                     <div className="form-check">
                                         <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required />
@@ -75,7 +89,6 @@ const Register = () => {
                                     <button className="btn  bg-custom-color">Sign Up</button>
                                 </div>
                             </form>
-
 
                             <div className="mt-3 mb-2 d-flex justify-content-center">
 

@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
       <MetaTags/>
       {/* <SideBar /> */}
       <main className='container'>{children}</main>
-      {/*<Footer />*/}
+      {/* <Footer /> */}
     </>
   )
 }
