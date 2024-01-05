@@ -2,8 +2,8 @@
 import React from "react";
 import styled from "styled-components";
 import JobView from "../../components/jobView";
-import JobSection from "../../components/JobSection";
-import JobApplicationsSection from "../../components/JobApplicationsSection";
+import JobSection from "../../components/jobSection";
+import JobApplicationsSection from "../../components/jobApplications";
 
 const DashboardWrapper = styled.div`
   /* Add your Dashboard styles here */

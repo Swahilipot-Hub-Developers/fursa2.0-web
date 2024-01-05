@@ -1,4 +1,3 @@
-// components/JobApplicationsSection.js
 import React from 'react';
 import styled from 'styled-components';
 
@@ -17,18 +16,7 @@ const ApplicationItem = styled.li`
 const JobApplicationsSection = ({ applications }) => {
   return (
     <JobApplicationsSectionWrapper>
-      <h2>View job applications and their status</h2>
-
-      {/* Display application list */}
-      <ApplicationList>
-        {applications.map((application) => (
-          <ApplicationItem key={application.jobTitle}>
-            <strong>{application.jobTitle}</strong>
-            <p>Status: {application.status}</p>
-            {/* Add more application details as needed */}
-          </ApplicationItem>
-        ))}
-      </ApplicationList>
+      {/* Omit the entire rendering of job applications and their status */}
     </JobApplicationsSectionWrapper>
   );
 };
