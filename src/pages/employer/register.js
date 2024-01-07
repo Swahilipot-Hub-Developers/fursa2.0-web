@@ -4,15 +4,10 @@ import Link from 'next/link';
 const Register = () => {
     return (
         <div>
-            <h1 className="text-primary display-1">Register</h1>
-
-            <div className="align-items-center mt-4 d-flex justify-content-center">
+            <div className="align-items-center mt-5 mb-5 d-flex justify-content-center">
                 <div className="col-md-6 col-12">
                     <div className="card">
                         <div className="card-title text-center">
-                            {/* <Link href="#" legacyBehavior>
-                            <a className="d-flex no-line justify-content-start px-3 pt-3">← Back to Selection Page</a>
-                        </Link> */}
                             <Image
                                 className="mt-4"
                                 src="/logo/Fursa logo 2.png"
@@ -22,7 +17,6 @@ const Register = () => {
                             />
                         </div>
                         <div className="card-body">
-
                             <form>
                                 <label className="form-label" htmlFor="first_name">Company Name</label>
                                 <input
@@ -56,7 +50,7 @@ const Register = () => {
                                 <label className="form-label mt-2" htmlFor="phone"> Company Phone</label>
                                 <input
                                     className="form-control"
-                                    id="phone"
+                                    id="phone_number"
                                     type="tel"
                                     required
                                 />
@@ -76,7 +70,7 @@ const Register = () => {
                                 />
                                 <div className="col-12 mt-4">
                                     <div className="form-check">
-                                        <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+                                        <input className="form-check-input" type="checkbox" id="invalidCheck" required/>
                                         <label className="form-check-label" for="invalidCheck">
                                             I accept the Terms and Conditions
                                         </label>
@@ -85,15 +79,13 @@ const Register = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mt-3 d-grid gap-2 ">
-                                    <button className="btn  bg-custom-color">Sign Up</button>
+                                <div className="mt-3 d-grid gap-2">
+                                    <button className="btn bg-custom-color">Sign Up</button>
                                 </div>
                             </form>
 
                             <div className="mt-3 mb-2 d-flex justify-content-center">
-
                                 <div>Already have an account? <Link href="/employer/login" legacyBehavior><a className="no-line">Login</a></Link></div>
-
                             </div>
                         </div>
                     </div>
