@@ -3,14 +3,13 @@ import { Navbar, Nav } from 'react-bootstrap';
 
 const NavBar = () => {
   return (
-    <Navbar bg="white" expand="lg">
+    <Navbar bg="white" expand="lg" className="px-3 border-bottom shadow-sm">
       <Navbar.Brand href="/">
         <Image
           src="/logo/Fursa Logo 2.png"
           height={50}
           width={100}
           alt="Swahilipot Logo"
-          className="ms-3"
         />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarNav" />
