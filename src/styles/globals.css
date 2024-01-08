@@ -1,3 +1,9 @@
+/**
+* Comments made to give better understanding of the styling done
+* for the sidebar. Make a point of reference to avoid altering
+* and messing up the styles.
+*/
+
 main{
   min-height: 73vh;
 }
@@ -19,4 +25,123 @@ main{
 
 .bg-custom-color {
   background-color: #8cc41c;
+}
+
+.selected-skills-text {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.selected-skill {
+  background-color: #8cc41c;
+  color: #fff;
+  border-radius: 20px;
+  padding: 4px 10px;
+  margin-right: 10px;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.remove-skill-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  margin-left: 5px;
+  padding-bottom: 0.25rem;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 150px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f8f9fa;
+  padding-top: 20px;
+  transition: width 0.3s;
+}
+
+/* Sidebar styling */
+/* Toggling the minimization of the sidebar by reducing the width */
+
+.minimized {
+  width: 90px;
+}
+
+/* Setting the display to cater for the sidebar */
+.content {
+  flex: 1;
+  padding-left: 200px;
+}
+
+/* Readjusts the content to move to the left (-ve value used to make it possible) */
+.sidebar-minimized {
+  margin-left: -80px;
+}
+
+.toggle-button {
+  position: fixed;
+  top: 5px;
+  left: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background: none;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-link::before,
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 100%;
+  height: 3px;
+  background-color: #045484;
+  transition: right 0.2s ease-in-out;
+}
+
+.nav-link:hover::before,
+.nav-link:hover::after {
+  right: 0;
+}
+
+/* FAQ Section */
+.tab-title {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tab-title.active {
+  background-color: #f1f1f1;
+  transition: .2s background-color ease-in-out;
+}
+
+.toggle-icon {
+  float: right;
+}
+
+.toggle-title {
+  text-decoration: none;
+  color: #333;
+}
+
+.tab-content {
+  display: none;
+  padding: 10px;
+}
+
+.tab-content.active {
+  display: block;
 }

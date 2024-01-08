@@ -71,7 +71,7 @@ const Register = () => {
                             </form>
 
                             <div className="mt-3 mb-2 d-flex justify-content-center">
-                                <div>Already have an account? <Link href="/jobseeker/login" legacyBehavior><a className="no-line">Login</a></Link></div>
+                                <div>Already have an account? <Link href="/seeker/login" legacyBehavior><a className="no-line">Login</a></Link></div>
                             </div>
                         </div>
                     </div>
