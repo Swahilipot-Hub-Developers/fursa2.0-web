@@ -13,7 +13,7 @@ const Profile = () => {
           height={100}
           alt="Fursa Web"
         />
-        <h2>Choose your status:</h2>
+        <h2>Choose your Profile:</h2>
       </div>
       <div className="d-flex gap-3 justify-content-center mt-4">
         <Link href="/seeker/login" legacyBehavior>
