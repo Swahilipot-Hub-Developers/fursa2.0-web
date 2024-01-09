@@ -1,29 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 
 const JobSection = ({ jobs }) => {
-  // Add filtering logic here
+  const [categoryFilter, setCategoryFilter] = useState('');
+  const [skillsFilter, setSkillsFilter] = useState('');
+  const [interestFilter, setInterestFilter] = useState('');
+
+  // Filtering logic
+  const filteredJobs = jobs
+    .filter(job => !categoryFilter || job.category === categoryFilter)
+    .filter(job => !skillsFilter || job.skills.includes(skillsFilter))
+    .filter(job => !interestFilter || job.interest === interestFilter);
 
   return (
     <div className="job-section-wrapper">
       <h2>View jobs</h2>
 
-      {/* Add filter options here */}
+      {/* Filter by Category */}
       <div className="filter-container">
         <label>Filter by Category:</label>
-        {/* Add category filter dropdown or input field */}
-      </div>
-      <div className="filter-container">
-        <label>Filter by Skills:</label>
-        {/* Add skills filter dropdown or input field */}
-      </div>
-      <div className="filter-container">
-        <label>Filter by Interest:</label>
-        {/* Add interest filter dropdown or input field */}
+        <select value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)}>
+          <option value="">All Categories</option>
+          {/* Add options dynamically based on your data */}
+        </select>
       </div>
 
-      {/* Display job list */}
+      {/* Filter by Skills */}
+      <div className="filter-container">
+        <label>Filter by Skills:</label>
+        <select value={skillsFilter} onChange={(e) => setSkillsFilter(e.target.value)}>
+          <option value="">All Skills</option>
+          {/* Add options dynamically based on your data */}
+        </select>
+      </div>
+
+      {/* Filter by Interest */}
+      <div className="filter-container">
+        <label>Filter by Interest:</label>
+        <select value={interestFilter} onChange={(e) => setInterestFilter(e.target.value)}>
+          <option value="">All Interests</option>
+          {/* Add options dynamically based on your data */}
+        </select>
+      </div>
+
+      {/* Display filtered job list */}
       <ul className="job-list">
-        {jobs.map((job) => (
+        {filteredJobs.map((job) => (
           <li key={job.title} className="job-item">
             <strong>{job.title}</strong>
             <p>Category: {job.category}</p>
