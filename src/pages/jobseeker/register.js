@@ -1,7 +1,73 @@
 import Image from 'next/image';
+import { useState } from 'react';
 import Link from 'next/link';
 
 const Register = () => {
+    const [formData, setFormData] = useState({
+        user: {
+            username: '',
+            first_name: '',
+            last_name: '',
+            email:'',
+            phone_number: '',
+            password: '',
+        },
+        is_in_school:'',
+        level_of_education:'',
+        is_currently_employed:'',
+        is_running_business: '',
+        areas_of_interest:'',
+        other_areas_of_interest:'',
+        referer:'',
+    })
+
+    const handleInputChange = (e) => {
+        const { id, value } = e.target;
+        const fieldId = id.split('.')[0];
+    
+        if (fieldId === 'user') {
+            const subFieldId = id.split('.')[1];
+            setFormData((prevFormData) => ({
+                ...prevFormData,
+                user: {
+                    ...prevFormData.user,
+                    [subFieldId]: value,
+                },
+            }));
+        } else {
+            setFormData((prevFormData) => ({
+                ...prevFormData,
+                [id]: value,
+            }));
+        }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        try {
+            console.log(formData);
+
+            const response = await fetch('http://127.0.0.1:8000/api/auth/register/oppourtunity_youth/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                // Handle success, maybe redirect or show a success message
+            } else {
+                // Handle errors based on response status
+                const errorData = await response.json();
+                console.error('Error:', errorData);
+            }
+        } catch (error) {
+            console.error('Fetch Error:', error);
+        }
+    };
+
     return (
         <div>
             <div className="align-items-center mt-5 mb-5 d-flex justify-content-center">
@@ -21,35 +87,45 @@ const Register = () => {
                                 <label className="form-label" htmlFor="first_name">First Name</label>
                                 <input
                                     className="form-control"
-                                    id="first_name"
+                                    id="user.first_name"
+                                    value={formData.user.first_name}
+                                    onChange={handleInputChange}
                                     type="text"
                                     required
                                 />
                                 <label className="form-label mt-2" htmlFor="last_name">Last Name</label>
                                 <input
                                     className="form-control"
-                                    id="second_name"
+                                    id="user.last_name"
+                                    value={formData.user.last_name}
+                                    onChange={handleInputChange}
                                     type="text"
                                     required
                                 />
                                 <label className="form-label mt-2" htmlFor="phone">Phone</label>
                                 <input
                                     className="form-control"
-                                    id="phone_number"
+                                    value={formData.user.phone_number}
+                                    onChange={handleInputChange}
+                                    id="user.phone_number"
                                     type="tel"
                                     required
                                 />
                                 <label className="form-label mt-2" htmlFor="email_address">Email Address</label>
                                 <input
                                     className="form-control"
-                                    id="email_address"
+                                    id="user.email"
+                                    value={formData.user.email}
+                                    onChange={handleInputChange}
                                     type="email"
                                     required
                                 />
                                 <label className="form-label mt-2" htmlFor="password">Password</label>
                                 <input
                                     className="form-control"
-                                    id="password"
+                                    id="user.password"
+                                    value={formData.user.password}
+                                    onChange={handleInputChange}
                                     type="password"
                                     required
                                 />

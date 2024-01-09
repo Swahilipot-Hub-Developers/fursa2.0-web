@@ -28,7 +28,7 @@ const Home = () => {
             </div>
           </a>
         </Link>
-        <Link href="/employer/login" legacyBehavior>
+        <Link href="/employer/passwordreset" legacyBehavior>
           <a className="no-line">
             <div className="card card-link p-4">
               <div className="card-body">
