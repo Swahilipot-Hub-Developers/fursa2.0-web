@@ -1,13 +1,8 @@
 // pages/jobseeker/dashboard.js
 import React from "react";
-import styled from "styled-components";
-import JobView from "../../components/jobView";
 import JobSection from "../../components/jobSection";
+import JobView from "../../components/jobView";
 import JobApplicationsSection from "../../components/jobApplications";
-
-const DashboardWrapper = styled.div`
-  /* Add your Dashboard styles here */
-`;
 
 const Dashboard = () => {
   // Mock data
@@ -34,12 +29,12 @@ const Dashboard = () => {
   ];
 
   return (
-    <DashboardWrapper>
+    <div>
       <h1>Welcome to your dashboard!</h1>
       <JobView />
       <JobSection jobs={mockJobs} />
       <JobApplicationsSection applications={mockJobApplications} />
-    </DashboardWrapper>
+    </div>
   );
 };
 

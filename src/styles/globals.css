@@ -5,3 +5,41 @@ main{
 .no-line{
   text-decoration-line: none;
 }
+/* JobApplicationsSection.css */
+
+.job-applications-section {
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.application-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.application-item {
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 1px solid #eee;
+}
+/* JobSection.css */
+
+.job-section-wrapper {
+  /* Add your JobSection styles here */
+}
+
+.filter-container {
+  /* Add filter styles here */
+}
+
+.job-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.job-item {
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid #ccc;
+}

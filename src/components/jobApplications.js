@@ -1,23 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
-
-const JobApplicationsSectionWrapper = styled.div`
-  /* Add your JobApplicationsSection styles here */
-`;
-
-const ApplicationList = styled.ul`
-  /* Add application list styles here */
-`;
-
-const ApplicationItem = styled.li`
-  /* Add application item styles here */
-`;
+// components/JobApplicationsSection.js
+import React from "react";
 
 const JobApplicationsSection = ({ applications }) => {
   return (
-    <JobApplicationsSectionWrapper>
-      {/* Omit the entire rendering of job applications and their status */}
-    </JobApplicationsSectionWrapper>
+    <div>
+      <h2>Job Applications</h2>
+      <ul>
+        {applications.map((application, index) => (
+          <li key={index}>
+            <p>Job Title: {application.jobTitle}</p>
+            <p>Status: {application.status}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
