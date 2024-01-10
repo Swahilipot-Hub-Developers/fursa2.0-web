@@ -1,7 +1,65 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+import axios from 'axios';
 
 const Login = () => {
+    const [formData, setFormData] = useState({
+        user:{
+            username: '',
+            password: '',
+        }
+    })
+
+    const handleInputChange = (e) => {
+        const { id, value } = e.target;
+        const fieldId = id.split('.')[0];
+
+        if (fieldId === 'user') {
+            const subFieldId = id.split('.')[1];
+            setFormData((prevFormData) => ({
+                ...prevFormData,
+                user: {
+                    ...prevFormData.user,
+                    [subFieldId]: value,
+                },
+            }));
+        } else {
+            setFormData((prevFormData) => ({
+                ...prevFormData,
+                [id]: value,
+            }));
+        }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            console.log(formData);
+            const response = await fetch('http://127.0.0.1:8000/api/auth/user/login/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+
+            console.log('Login successful:', response.data);
+            
+            if (response.ok){
+                window.location.reload()
+            }
+
+        } catch (error) {
+            console.error('Login failed:', error);
+            // Handle login failure (e.g., display error message)
+        }
+    };
+
+
+
     return (
         <div className="d-flex justify-content-center align-items-center vh-100">
             <div className="col-md-6 col-12">
@@ -19,18 +77,22 @@ const Login = () => {
                         />
                     </div>
                     <div className="card-body">
-                        <form>
-                            <label className="form-label" htmlFor="email_address">Email Address</label>
+                        <form onSubmit={handleSubmit}>
+                            <label className="form-label" htmlFor="username">Username</label>
                             <input
                                 className="form-control"
-                                id="email_address"
-                                type="email"
+                                id="user.username"
+                                value={formData.user.username}
+                                onChange={handleInputChange}
+                                type="text"
                                 required
                             />
                             <label className="form-label mt-2" htmlFor="password">Password</label>
                             <input
                                 className="form-control"
-                                id="password"
+                                id="user.password"
+                                value={formData.user.password}
+                                onChange={handleInputChange}
                                 type="password"
                                 required
                             />

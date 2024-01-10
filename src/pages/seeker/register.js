@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import axios from 'axios';
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -18,7 +19,6 @@ const Register = () => {
         is_running_business: '',
         areas_of_interest: '',
         other_areas_of_interest: '',
-        referer: '',
     });
 
     const handleInputChange = (e) => {
@@ -47,7 +47,18 @@ const Register = () => {
 
         try {
             console.log(formData);
-            const response = await axios.post('http://127.0.0.1:8000/api/auth/register/employer/', formData);
+            const response = await fetch('http://127.0.0.1:8000/api/auth/register/opportunity_youth/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+            // Do something with the response data if needed
+            console.log(data);
+            
         } catch (error) {
             console.error(error);
         }
@@ -84,7 +95,7 @@ const Register = () => {
                                     className="form-control"
                                     id="user.first_name"
                                     value={formData.user.first_name}
-                                    onchange={handleInputChange}
+                                    onChange={handleInputChange}
                                     type="text"
                                     required
                                 />
@@ -111,8 +122,8 @@ const Register = () => {
                                 <label className="form-label mt-2" htmlFor="email_address">Email Address</label>
                                 <input
                                     className="form-control"
-                                    id="user.email_address"
-                                    value={formData.user.email_address}
+                                    id="user.email"
+                                    value={formData.user.email}
                                     onChange={handleInputChange}
                                     type="email"
                                     required
@@ -127,52 +138,96 @@ const Register = () => {
                                     required
                                 />
 
-                                <label className="form-label" htmlFor="level_of_education">Level of Education</label>
-                                <select
-                                    className="form-control"
-                                    id="in_school"
-                                    value={formData.in_school}
-                                    onChange={handleInputChange}
-                                    required
-                                >
-                                    <option value='' disabled>
+                                <label className="form-label mt-2">Are you in School?</label>
+                                <div className="d-flex gap-4">
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            id="is_in_school"
+                                            name="is_in_school"
+                                            value="true"
+                                            checked={formData.is_in_school === 'true'}
+                                            onChange={handleInputChange}
+                                            required
+                                        />
+                                        Yes
+                                    </label>
 
-                                    </option>
-                                    <option value="true">True</option>
-                                    <option value="false">False</option>
-                                </select>
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            id="is_in_school"
+                                            name="is_in_school"
+                                            value="false"
+                                            checked={formData.is_in_school === 'false'}
+                                            onChange={handleInputChange}
+                                            required
+                                        />
+                                        No
+                                    </label>
+                                </div>
 
-                                <label className="form-label" htmlFor="employed">Are you employed?</label>
-                                <select
-                                    className="form-control"
-                                    id="employment"
-                                    value={formData.employmeny}
-                                    onChange={handleInputChange}
-                                    required
-                                >
-                                    <option value='' disabled>
 
-                                    </option>
-                                    <option value="true">True</option>
-                                    <option value="false">False</option>
-                                </select>
+                                <label className="form-label mt-2">Are you employed?</label>
+                                <div className="d-flex gap-4">
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            id="is_currently_employed"
+                                            name="is_currently_employed"
+                                            value="true"
+                                            checked={formData.is_currently_employed === 'true'}
+                                            onChange={handleInputChange}
+                                            required
+                                        />
+                                        Yes
+                                    </label>
 
-                                <label className="form-label" htmlFor="in_business">Are you in business?</label>
-                                <select
-                                    className="form-control"
-                                    id="in_business"
-                                    value={formData.in_business}
-                                    onChange={handleInputChange}
-                                    required
-                                >
-                                    <option value='' disabled>
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            id="is_currently_employed"
+                                            name="is_currently_employed"
+                                            value="false"
+                                            checked={formData.is_currently_employed === 'false'}
+                                            onChange={handleInputChange}
+                                            required
+                                        />
+                                        No
+                                    </label>
+                                </div>
 
-                                    </option>
-                                    <option value="true">True</option>
-                                    <option value="false">False</option>
-                                </select>
+                                <label className="form-label mt-2">Are you in business?</label>
+                                <div className="d-flex gap-4">
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            id="is_running_business"
+                                            name="is_running_business"
+                                            value="true"
+                                            checked={formData.is_running_business === 'true'}
+                                            onChange={handleInputChange}
+                                            required
+                                        />
+                                        Yes
+                                    </label>
 
-                                <label className="form-label" htmlFor="level_of_education">Level of Education</label>
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            id="is_running_business"
+                                            name="is_running_business"
+                                            value="false"
+                                            checked={formData.is_running_business === 'false'}
+                                            onChange={handleInputChange}
+                                            required
+                                        />
+                                        No
+                                    </label>
+                                </div>
+
+
+                                <label className="form-label mt-2" htmlFor="level_of_education">Level of Education</label>
                                 <select
                                     className="form-control"
                                     id="level_of_education"
@@ -181,21 +236,21 @@ const Register = () => {
                                     required
                                 >
                                     <option value='' disable>
-                                        Select Type
+                                        Select Level
                                     </option>
 
-                                    <option value="PRIMARY">Pri</option>
-                                    <option value="SECONDARY">Sec</option>
-                                    <option value="College">coll</option>
-                                    <option value="Unversity">Uni</option>
-
+                                    <option value="PRIMARY">Primary</option>
+                                    <option value="SECONDARY">Secondary</option>
+                                    <option value="SOME COLLEGE">College</option>
+                                    <option value="UNIVERSITY">University</option>
+                                    <option value="TVET">TVET</option>
                                 </select>
 
-                                <label className="form-label" htmlFor="interest_areas">Areas of Interests</label>
+                                <label className="form-label mt-2" htmlFor="interest_areas">Areas of Interests</label>
                                 <select
                                     className="form-control"
-                                    id="interest_area"
-                                    value={formData.interest_area}
+                                    id="areas_of_interest"
+                                    value={formData.areas_of_interest}
                                     onChange={handleInputChange}
                                     required
                                 >
@@ -203,31 +258,26 @@ const Register = () => {
                                         Select Type
                                     </option>
 
-                                    <option value="Tvet">TVET</option>
-                                    <option value="Employed">EMPLOYED</option>
-                                    <option value="Businesss">BUSINESS</option>
-                                    <option value="Arts">ARTS</option>
-                                    <option value="Enterpreneur">Enterpreneur</option>
-                                    <option value="Digital">Digital</option>
-                                    <option value="job_search">Job search</option>
-                                    <option value="Health">Health</option>
-                                    <option value="Tourism">Tourism</option>
-
-
+                                    <option value="TVET">TVET</option>
+                                    <option value="EMPLOYED">EMPLOYED</option>
+                                    <option value="BUSINESS">BUSINESS</option>
+                                    <option value="ARTS">ARTS</option>
+                                    <option value="ENTREPRENEUR">Enterpreneur</option>
+                                    <option value="DIGITAL">Digital</option>
+                                    <option value="JOB_SEARCH">Job search</option>
+                                    <option value="HEALTH">Health</option>
+                                    <option value="TOURISM">Tourism</option>
                                 </select>
 
                                 <label className="form-label mt-2" htmlFor="last_name">Other areas of interest</label>
                                 <input
                                     className="form-control"
-                                    id="other_interest"
-                                    value={formData.user.other_interest}
+                                    id="other_areas_of_interest"
+                                    value={formData.other_areas_of_interest}
                                     onChange={handleInputChange}
                                     type="text"
                                     required
                                 />
-
-
-
                                 <div className="col-12 mt-4">
                                     <div className="form-check">
                                         <input className="form-check-input" type="checkbox" id="invalidCheck" required />
