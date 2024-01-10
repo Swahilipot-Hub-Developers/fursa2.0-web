@@ -1,5 +1,4 @@
 import JobView from "../../components/jobView";
-import JobSection from "../../components/jobSection";
 import JobApplicationsSection from "../../components/jobApplications";
 import JobCard from "@/components/jobCard";
 
