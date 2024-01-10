@@ -1,5 +1,3 @@
-// pages/_app.js
-import { SessionProvider } from "next-auth/react";
 import "../styles/scss/theme.scss";
 import "../styles/globals.css";
 import { useEffect } from "react";
@@ -11,11 +9,9 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <SessionProvider session={pageProps.session}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </SessionProvider>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   );
 }
 

@@ -1,23 +1,3 @@
-// components/JobSection.js
-import React from 'react';
-import styled from 'styled-components';
-
-const JobSectionWrapper = styled.div`
-  /* Add your JobSection styles here */
-`;
-
-const FilterContainer = styled.div`
-  /* Add filter styles here */
-`;
-
-const JobList = styled.ul`
-  /* Add job list styles here */
-`;
-
-const JobItem = styled.li`
-  /* Add job item styles here */
-`;
-
 const JobSection = ({ jobs }) => {
   // Add filtering logic here
 

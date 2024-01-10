@@ -9,7 +9,7 @@ const NavBar = () => {
           src="/logo/Fursa Logo 2.png"
           height={50}
           width={100}
-          alt="Swahilipot Logo"
+          alt="Fursa Logo"
         />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarNav" />
