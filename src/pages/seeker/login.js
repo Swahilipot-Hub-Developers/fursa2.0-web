@@ -1,60 +1,36 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import axios from 'axios';
 
 const Login = () => {
-    const [formData, setFormData] = useState({
-        user:{
-            username: '',
-            password: '',
-        }
-    })
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
-    const handleInputChange = (e) => {
-        const { id, value } = e.target;
-        const fieldId = id.split('.')[0];
-
-        if (fieldId === 'user') {
-            const subFieldId = id.split('.')[1];
-            setFormData((prevFormData) => ({
-                ...prevFormData,
-                user: {
-                    ...prevFormData.user,
-                    [subFieldId]: value,
-                },
-            }));
-        } else {
-            setFormData((prevFormData) => ({
-                ...prevFormData,
-                [id]: value,
-            }));
-        }
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setError('');
 
         try {
-            console.log(formData);
             const response = await fetch('http://127.0.0.1:8000/api/auth/user/login/', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ username, password })
             });
 
-
-            console.log('Login successful:', response.data);
-            
-            if (response.ok){
-                window.location.reload()
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
+
+            const responseData = await response.json();
+            //console.log('Login successful:', responseData);
+            // Here you can handle further logic like redirection or state update
 
         } catch (error) {
             console.error('Login failed:', error);
-            // Handle login failure (e.g., display error message)
+            setError('Login failed. Please check your credentials and try again.');
         }
     };
 
@@ -77,22 +53,23 @@ const Login = () => {
                         />
                     </div>
                     <div className="card-body">
+                        {error && <p>{error}</p>}
                         <form onSubmit={handleSubmit}>
                             <label className="form-label" htmlFor="username">Username</label>
                             <input
                                 className="form-control"
-                                id="user.username"
-                                value={formData.user.username}
-                                onChange={handleInputChange}
+                                id="username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
                                 type="text"
                                 required
                             />
                             <label className="form-label mt-2" htmlFor="password">Password</label>
                             <input
                                 className="form-control"
-                                id="user.password"
-                                value={formData.user.password}
-                                onChange={handleInputChange}
+                                id="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                                 type="password"
                                 required
                             />
