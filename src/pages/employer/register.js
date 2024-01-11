@@ -47,8 +47,13 @@ const Register = () => {
         e.preventDefault()
 
         try {
+            // Handle all console logs to prevent data leaks
             console.log(formData);
             const response = await axios.post('http://127.0.0.1:8000/api/auth/register/employer/', formData);
+            
+            if (response.ok){
+                router.push('/seeker/dashboard/')
+            }
         } catch (error) {
             console.error(error);
         }

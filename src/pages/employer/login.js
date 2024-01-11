@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const router = useRouter()
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -22,6 +24,8 @@ const Login = () => {
 
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
+            } else {
+                router.push('/employer/dashboard')
             }
 
             const responseData = await response.json();

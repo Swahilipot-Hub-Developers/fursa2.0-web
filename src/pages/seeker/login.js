@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const router = useRouter()
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -22,7 +24,10 @@ const Login = () => {
 
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
+            } else {
+                router.push('/seeker/dashboard')
             }
+
 
             const responseData = await response.json();
             //console.log('Login successful:', responseData);

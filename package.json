@@ -17,6 +17,7 @@
     "fortawesome": "^0.0.1-security",
     "next": "13.5.6",
     "next-auth": "^4.24.5",
+    "nextjs-auth": "^0.0.5",
     "react": "^18",
     "react-bootstrap": "^2.9.2",
     "react-bootstrap-sidebar": "^0.0.1",
