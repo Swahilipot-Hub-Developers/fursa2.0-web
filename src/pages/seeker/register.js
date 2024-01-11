@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const Register = () => {
+    const router = useRouter()
     const [formData, setFormData] = useState({
         user: {
             username: '',
@@ -56,6 +57,10 @@ const Register = () => {
             });
 
             const data = await response.json();
+
+            if (response.ok){
+                router.push('/seeker/dashboard/')
+            }
             // Do something with the response data if needed
             console.log(data);
             
