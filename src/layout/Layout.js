@@ -22,6 +22,16 @@ const Layout = ({ children }) => {
         <main className='container'>{children}</main>
       </>
     )
+  } else if (router.pathname === '/employer/login' || router.pathname === '/employer/register'
+  || router.pathname === '/seeker/login' || router.pathname === '/seeker/register'
+  || router.pathname === '/reset-password' || router.pathname === '/create-new-password'
+  || router.pathname === '/profile' ) {
+    return (
+      <>
+        <MetaTags />
+        <main className='container'>{children}</main>
+      </>
+    )
   } else {
     return (
       <>

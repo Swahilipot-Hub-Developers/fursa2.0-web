@@ -1,5 +1,7 @@
+// Import necessary modules
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 
 const JobApplicationsSection = () => {
   const [jobData, setJobData] = useState([]);
@@ -20,7 +22,7 @@ const JobApplicationsSection = () => {
   }, []);
 
   return (
-    <div className="job-applications-section">
+    <div className="table-responsive">
       <table className="table table-hover">
         <thead>
           <tr>
@@ -35,7 +37,11 @@ const JobApplicationsSection = () => {
         <tbody>
           {jobData.map((job, index) => (
             <tr key={index} className="job-table-row">
-              <td>{job.title}</td>
+              <td>
+                <Link href={`/seeker/jobs/${job.id}`} legacyBehavior>
+                  <a>{job.title}</a>
+                </Link>
+              </td>
               <td>{job.location}</td>
               <td>{job.type}</td>
               <td>{job.vacancies}</td>
