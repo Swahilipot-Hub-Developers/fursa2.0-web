@@ -1,18 +1,14 @@
-import JobView from "../../components/jobView";
-import JobApplicationsSection from "../../components/jobApplications";
-import JobCard from "@/components/jobCard";
+import JobApplicationsSection from "@/components/jobs/jobList";
+import JobView from "@/components/jobs/jobView";
 
 const Dashboard = () => {
-
   return (
-    <>
-      <h1>Welcome to your dashboard!</h1>
+    <div className="my-4">
       <JobView />
-      <JobCard/>
-      {/*<JobSection />*/}
       <JobApplicationsSection />
-    </>
+    </div>
   );
 };
 
 export default Dashboard;
+<JobView />;
