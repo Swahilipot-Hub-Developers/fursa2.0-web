@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
       <>
         <MetaTags />
         <NavBar />
-        <main className='container'>{children}</main>
+        <main className=''>{children}</main>
       </>
     )
   } else {
