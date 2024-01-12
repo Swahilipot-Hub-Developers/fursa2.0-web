@@ -2,7 +2,7 @@
 const Header = () => {
     return (
       <div>
-        <h1 className="bg-gray-800 p-4">My Dashboard</h1>
+        <h1 className="bg-gray-800 py-4">My Dashboard</h1>
       </div>
     );
   };

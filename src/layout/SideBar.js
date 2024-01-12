@@ -1,21 +1,36 @@
 import Link from 'next/link';
 import { ListGroup } from 'react-bootstrap';
+import { useRouter } from 'next/router';
 
-const Sidebar = ({isMinimized}) => {
+const Sidebar = ({ isMinimized }) => {
+  const router = useRouter();
+  const userType = router.pathname.startsWith('/employer') ? 'employer' : 'seeker';
+
+  const sidebarItems = userType === 'employer'
+    ? [
+        { href: '/employer/dashboard', label: 'Dashboard' },
+        { href: '/employer/create-job', label: 'Create job' },
+        { href: '/employer/create-skills', label: 'Create Skills'},
+        { href: '/employer/view-applications', label: 'View Applications'},
+      ]
+    : [
+        { href: '/seeker/dashboard', label: 'Dashboard' },
+        { href: '/seeker/jobs/catalogue', label: 'Jobs' },
+      ];
+
   return (
     <div className={`sidebar ${isMinimized ? 'minimized' : ''}`}>
       <ListGroup className="mt-3">
-        <Link href="/">
-          <ListGroup.Item action active>
-          Work in Progress
-          </ListGroup.Item>
-        </Link>
-        <Link href="/about">
-          <ListGroup.Item action>Work in Progress</ListGroup.Item>
-        </Link>
-        <Link href="/contact">
-          <ListGroup.Item action>Work in Progress</ListGroup.Item>
-        </Link>
+        {sidebarItems.map((item) => (
+          <Link key={item.href} href={item.href}>
+            <ListGroup.Item
+              action
+              active={router.pathname === item.href}
+            >
+              {item.label}
+            </ListGroup.Item>
+          </Link>
+        ))}
       </ListGroup>
     </div>
   );

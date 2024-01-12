@@ -22,6 +22,11 @@ const Login = () => {
                 body: JSON.stringify({ username, password })
             });
 
+            //const { access, refresh } = response.data;
+
+            //localStorage.setItem('access_token', access);
+            //localStorage.setItem('refresh_token', refresh);
+
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             } else {
@@ -45,7 +50,7 @@ const Login = () => {
         <div className="d-flex justify-content-center align-items-center vh-100">
             <div className="col-md-6 col-12">
                 <div className="card">
-                    <Link href="/" legacyBehavior>
+                    <Link href="/profile" legacyBehavior>
                         <a className="d-flex no-line justify-content-start px-3 pt-3">← Back to Selection Page</a>
                     </Link>
                     <div className="card-title text-center">
@@ -84,7 +89,7 @@ const Login = () => {
                             <Link href="/seeker/register" legacyBehavior>
                                 <a className="no-line">Create Account</a>
                             </Link>
-                            <Link href="#" legacyBehavior>
+                            <Link href="/reset-password" legacyBehavior>
                                 <a className="no-line">Forgot Password</a>
                             </Link>
                         </div>
