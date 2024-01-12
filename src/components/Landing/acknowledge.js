@@ -2,7 +2,8 @@ import Image from 'next/image';
 
 const Acknowledge = () => {
     return (
-        <div className="d-md-flex mt-3">
+        <div className="bg-light">
+            <div className="container d-md-flex pt-3">
             <div className="col-12 col-md-6">
                 <h2 className="fw-bold">HE. Abdulswamad Shariff Nassir</h2>
                 <h5>Governor, Mombasa County</h5>
@@ -27,6 +28,7 @@ const Acknowledge = () => {
                 className="img-fluid"
                 />
             </div>
+        </div>
         </div>
     )
 }

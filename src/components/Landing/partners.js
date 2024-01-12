@@ -2,7 +2,8 @@ import Image from 'next/image';
 
 const Partners = () => {
     return (
-        <div className="my-3 py-3">
+       <div className="bg-light"> 
+         <div className="pt-3">
             <div className="text-center mb-5">
                 <h2 className="fw-bold">Our Partners</h2>
             </div>
@@ -26,6 +27,7 @@ const Partners = () => {
                 </div>
             </div>
         </div>
+       </div>
     )
 }
 
