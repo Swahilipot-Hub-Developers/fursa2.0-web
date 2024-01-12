@@ -1,17 +1,14 @@
-import Header from '@/components/employerDashboard/header';
-import Table from '@/components/employerDashboard/table';
-import cardsList from '@/components/employerDashboard/cardsList';
+import EmployerTable from '@/components/employerDashboard/applicationTable';
+import CardsList from '@/components/employerDashboard/cardsList';
+import Header from '@/components/employerDashboard/dashMsg';
 
 const Dashboard = () => {
   return (
-    <div>
-      
-        <Header/>
-        <cardsList/>
-        <Table/>
-        
-      </div>
-    
+    <div>      
+      <Header/>
+      <CardsList/>
+      <EmployerTable/>
+    </div>
   );
 };
 

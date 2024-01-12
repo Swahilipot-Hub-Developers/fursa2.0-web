@@ -9,7 +9,9 @@ const Sidebar = ({ isMinimized }) => {
   const sidebarItems = userType === 'employer'
     ? [
         { href: '/employer/dashboard', label: 'Dashboard' },
-        { href: '/employer/jobs', label: 'Jobs' },
+        { href: '/employer/create-job', label: 'Create job' },
+        { href: '/employer/create-skills', label: 'Create Skills'},
+        { href: '/employer/view-applications', label: 'View Applications'},
       ]
     : [
         { href: '/seeker/dashboard', label: 'Dashboard' },
