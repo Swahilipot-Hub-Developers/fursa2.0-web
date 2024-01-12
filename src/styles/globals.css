@@ -145,3 +145,9 @@ main {
 .tab-content.active {
   display: block;
 }
+
+
+.card-emp{ 
+  max-width: 18rem;
+
+}
