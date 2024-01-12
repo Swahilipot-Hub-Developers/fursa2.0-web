@@ -1,9 +1,19 @@
+import Header from '@/components/employerDashboard/header';
+import Table from '@/components/employerDashboard/table';
+import cardsList from '@/components/employerDashboard/cardsList';
+
 const Dashboard = () => {
-    return (
-        <div>
-            <h2>Dashboard</h2>
-        </div>
-    )
-}
+  return (
+    <div>
+      
+        <Header/>
+        <cardsList/>
+        <Table/>
+        
+      </div>
+    
+  );
+};
 
 export default Dashboard;
+

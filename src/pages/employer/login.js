@@ -78,7 +78,7 @@ const Login = () => {
                             <button className="btn btn-primary mt-3">Login</button>
                         </form>
                         <div className="mt-3 mb-2 d-flex justify-content-between">
-                            <Link href="/employer/register" legacyBehavior>
+                            <Link href="/employer/dashboard" legacyBehavior>
                                 <a className="no-line">Create Account</a>
                             </Link>
                             <Link href="/reset-password" legacyBehavior>
