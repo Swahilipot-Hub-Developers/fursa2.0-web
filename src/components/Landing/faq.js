@@ -3,7 +3,9 @@ import Questions from "../FAQ/questions";
 
 const FAQ = () => {
     return (
-        <div style={{marginBottom: '8em',}}>
+        
+        <div className="bg-faqs">
+        <div className="container" style={{paddingBottom: '8em',}}>
             <div className="py-5">
                 <h1 className="text-center display-5 fw-bold mb-4">
                     For any inquiries, reach out to us via
@@ -42,6 +44,8 @@ const FAQ = () => {
                 />
             </div>
         </div>
+        </div>
+      
     )
 }
 

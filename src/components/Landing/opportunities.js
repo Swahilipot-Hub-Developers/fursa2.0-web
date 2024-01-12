@@ -1,7 +1,8 @@
 const Opportunities = () => {
     return (
-        <div className="text-center mt-3">
-            <h1 className="display-6 px-5 fw-bold text-primary mb-4">
+        <div className="bg-white"> 
+        <div className=" container text-center pt-3 pb-2">
+            <h1 className="display-6 px-5 fw-bold text-primary">
                 Are you in Mombasa and looking
                 for Opportunities?
             </h1>
@@ -17,6 +18,7 @@ const Opportunities = () => {
                 We strive to partner with a variety of employers and organizations to bring you the best
                 opportunities possible.
             </p>
+        </div>
         </div>
     )
 }
