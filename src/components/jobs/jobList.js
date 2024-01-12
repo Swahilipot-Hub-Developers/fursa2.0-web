@@ -5,19 +5,24 @@ const JobApplicationsSection = () => {
   const [jobData, setJobData] = useState([]);
   const [filteredJobData, setFilteredJobData] = useState([]);
   const [skillsFilter, setSkillsFilter] = useState("");
-  const [categoryFilter, setCategoryFilter] = useState("");
-  const [locationFilter, setLocationFilter] = useState("");
+  const [skillsList, setSkillsList] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
+        const jobResponse = await axios.get(
           "http://127.0.0.1:8000/api/fursa/opportunity/jobs/"
         );
-        setJobData(response.data);
+        setJobData(jobResponse.data);
+
+        const skillsResponse = await axios.get(
+          "http://127.0.0.1:8000/api/fursa/skills/"
+        );
+        setSkillsList(skillsResponse.data);
+
         applyFilters();
       } catch (error) {
-        console.error("Error fetching job data:", error);
+        console.error("Error fetching data:", error);
       }
     };
 
@@ -26,26 +31,16 @@ const JobApplicationsSection = () => {
 
   useEffect(() => {
     applyFilters();
-  }, [skillsFilter, categoryFilter, locationFilter]);
+  }, [skillsFilter]);
 
   const applyFilters = () => {
     let filteredJobs = jobData;
 
     if (skillsFilter) {
       filteredJobs = filteredJobs.filter((job) =>
-        job.skills_required.toLowerCase().includes(skillsFilter.toLowerCase())
-      );
-    }
-
-    if (categoryFilter) {
-      filteredJobs = filteredJobs.filter((job) =>
-        job.category.toLowerCase().includes(categoryFilter.toLowerCase())
-      );
-    }
-
-    if (locationFilter) {
-      filteredJobs = filteredJobs.filter((job) =>
-        job.location.toLowerCase().includes(locationFilter.toLowerCase())
+        job.skills_required.title
+          .toLowerCase()
+          .includes(skillsFilter.toLowerCase())
       );
     }
 
@@ -74,7 +69,7 @@ const JobApplicationsSection = () => {
                 <td>{job.type}</td>
                 <td>{job.vacancies}</td>
                 <td>{job.target_number_of_applications}</td>
-                <td>{job.skills_required}</td>
+                <td>{job.skills_required.title}</td>
               </tr>
             ))}
           </tbody>
@@ -82,34 +77,19 @@ const JobApplicationsSection = () => {
       </div>
       <div className="filter-container">
         <div>
-          <label>Skills:</label>
-          <input
+          <label>Filter by Skill:</label>
+          <select
             className="form-control"
-            type="text"
-            placeholder="Enter skills"
             value={skillsFilter}
             onChange={(e) => setSkillsFilter(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Category:</label>
-          <input
-            className="form-control"
-            type="text"
-            placeholder="Enter category"
-            value={categoryFilter}
-            onChange={(e) => setCategoryFilter(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Location:</label>
-          <input
-            className="form-control"
-            type="text"
-            placeholder="Enter location"
-            value={locationFilter}
-            onChange={(e) => setLocationFilter(e.target.value)}
-          />
+          >
+            <option value="">Select Skill</option>
+            {skillsList.map((skill, index) => (
+              <option key={index} value={skill.title}>
+                {skill.title}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
     </div>
