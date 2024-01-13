@@ -20,7 +20,7 @@ const EmployerTable = () => {
   }, []);
 
   return (
-    <div className="job-applications-section">
+    <div className="table-responsive">
       <table className="table table-hover">
         <thead>
           <tr>
