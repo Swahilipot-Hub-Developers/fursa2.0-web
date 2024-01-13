@@ -67,7 +67,8 @@ main {
 
 /* Toggling the minimization of the sidebar by reducing the width */
 .minimized {
-  width: 90px;
+  width: 120px;
+  margin-left: 0px;
 }
 
 /* Setting the display to cater for the sidebar */
@@ -91,6 +92,7 @@ main {
   background: none;
   z-index: 1;
 }
+/*End of Sidebar Styling*/
 
 .nav-link {
   position: relative;

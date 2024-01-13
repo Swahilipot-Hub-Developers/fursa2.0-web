@@ -1,25 +1,25 @@
 import Link from 'next/link';
-import { ListGroup, Button } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-const Sidebar = ({ isMinimized, toggleSidebar }) => {
+const Sidebar = ({ isMinimized }) => {
   const router = useRouter();
   const userType = router.pathname.startsWith('/employer') ? 'employer' : 'seeker';
-  const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(true);
+  const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsOffcanvasOpen(window.innerWidth > 768);
+      setIsOffcanvasOpen(window.innerWidth > 768 && isOffcanvasOpen);
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize();
+    setIsOffcanvasOpen(window.innerWidth > 768);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [isOffcanvasOpen]);
 
   const sidebarItems = userType === 'employer'
     ? [
@@ -31,6 +31,8 @@ const Sidebar = ({ isMinimized, toggleSidebar }) => {
     : [
         { href: '/seeker/dashboard', label: 'Dashboard' },
         { href: '/seeker/jobs/catalogue', label: 'Jobs' },
+        { href: '/seeker/view-applications', label: 'View Applications'},
+        { href: '/seeker/apply-job', label: 'Apply for a job' },
       ];
 
   return (
