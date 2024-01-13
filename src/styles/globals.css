@@ -152,6 +152,25 @@ main {
 
 }
 
+.job-applications-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.table-container {
+  flex-grow: 1;
+  margin-right: 20px; /* Adjust the margin as needed */
+}
+
+.filter-container {
+  width: 300px; /* Adjust the width as needed */
+}
+
+.filter-container > div {
+  margin-bottom: 10px;
+}
+
 .bg-image-wrapper{
   position: fixed;
   top: 0;
