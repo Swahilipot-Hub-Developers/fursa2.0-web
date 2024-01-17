@@ -48,7 +48,7 @@ const Register = () => {
 
         try {
             console.log(formData);
-            const response = await fetch('http://127.0.0.1:8000/api/auth/register/opportunity_youth/', {
+            const response = await fetch('https://swahilipot.up.railway.app/api/auth/register/opportunity_youth/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

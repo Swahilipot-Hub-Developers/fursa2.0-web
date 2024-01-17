@@ -11,7 +11,7 @@ const Jobs = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/api/fursa/opportunity/jobs/"
+          "https://swahilipot.up.railway.app/api/fursa/opportunity/jobs/"
         );
         setJobData(response.data);
         setFilteredJobs(response.data);

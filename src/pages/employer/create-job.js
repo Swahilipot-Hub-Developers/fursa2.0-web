@@ -22,7 +22,7 @@ const CreateJob = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/fursa/jobs/create/', {
+      const response = await fetch('https://swahilipot.up.railway.app/api/fursa/jobs/create/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

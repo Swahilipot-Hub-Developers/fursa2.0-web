@@ -17,7 +17,7 @@ const JobApplicationsSection = () => {
         setJobData(jobResponse.data);
 
         const skillsResponse = await axios.get(
-          "http://127.0.0.1:8000/api/fursa/skills/"
+          "https://swahilipot.up.railway.app/api/fursa/skills/"
         );
         setSkillsList(skillsResponse.data);
 

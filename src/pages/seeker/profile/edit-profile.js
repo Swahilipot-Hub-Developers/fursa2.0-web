@@ -20,7 +20,7 @@ const EditProfile = () => {
 
     useEffect(() => {
         // Simulate fetching existing seeker details from an endpoint
-        fetch('http://127.0.0.1/api/')  // Replace with your actual API endpoint
+        fetch('https://swahilipot.up.railway.app/api/')  // Replace with your actual API endpoint
             .then(response => response.json())
             .then(existingSeekerDetails => {
                 setFormData(existingSeekerDetails);
