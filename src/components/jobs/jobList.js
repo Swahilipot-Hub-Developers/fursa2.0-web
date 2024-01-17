@@ -1,4 +1,3 @@
-// Import necessary modules
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
@@ -76,21 +75,21 @@ const JobApplicationsSection = () => {
               <td>{job.target_number_of_applications}</td>
               <td>{job.skills_required}</td>
             </tr>
-          </thead>
-          <tbody>
-            {filteredJobData.map((job, index) => (
-              <tr key={index} className="job-table-row">
-                <td>{job.title}</td>
-                <td>{job.location}</td>
-                <td>{job.type}</td>
-                <td>{job.vacancies}</td>
-                <td>{job.target_number_of_applications}</td>
-                <td>{job.skills_required.title}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+        <tbody>
+          {filteredJobData.map((job, index) => (
+            <tr key={index} className="job-table-row">
+              <td>{job.title}</td>
+              <td>{job.location}</td>
+              <td>{job.type}</td>
+              <td>{job.vacancies}</td>
+              <td>{job.target_number_of_applications}</td>
+              <td>{job.skills_required.title}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       <div className="filter-container">
         <div>
           <label>Filter by Skill:</label>
@@ -110,6 +109,6 @@ const JobApplicationsSection = () => {
       </div>
     </div>
   );
-};
+}  
 
 export default JobApplicationsSection;

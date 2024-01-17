@@ -53,6 +53,7 @@ main {
   cursor: pointer;
 }
 
+/* Sidebar styling */
 .sidebar {
   width: 150px;
   height: 100%;
@@ -64,11 +65,10 @@ main {
   transition: width 0.3s;
 }
 
-/* Sidebar styling */
 /* Toggling the minimization of the sidebar by reducing the width */
-
 .minimized {
-  width: 90px;
+  width: 120px;
+  margin-left: 0px;
 }
 
 /* Setting the display to cater for the sidebar */
@@ -84,13 +84,15 @@ main {
 
 .toggle-button {
   position: fixed;
-  top: 5px;
+  top: 4px;
   left: 10px;
   cursor: pointer;
   border: none;
   border-radius: 10px;
   background: none;
+  z-index: 1;
 }
+/*End of Sidebar Styling*/
 
 .nav-link {
   position: relative;
@@ -160,11 +162,11 @@ main {
 
 .table-container {
   flex-grow: 1;
-  margin-right: 20px; /* Adjust the margin as needed */
+  margin-right: 20px;
 }
 
 .filter-container {
-  width: 300px; /* Adjust the width as needed */
+  width: 300px;
 }
 
 .filter-container > div {
@@ -203,4 +205,26 @@ main {
   margin: 0;
   padding: 0;
   z-index: -1;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 180px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .minimized {
+    width: 0;
+  }
+
+  .content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .sidebar-minimized {
+    margin-left: 0;
+  }
 }
