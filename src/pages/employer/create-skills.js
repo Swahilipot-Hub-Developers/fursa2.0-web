@@ -17,7 +17,7 @@ const CreateSkills = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/fursa/skills/', {
+      const response = await fetch('https://swahilipot.up.railway.app/api/fursa/skills/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

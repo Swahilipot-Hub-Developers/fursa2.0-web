@@ -49,7 +49,7 @@ const Register = () => {
         try {
             // Handle all console logs to prevent data leaks
             console.log(formData);
-            const response = await axios.post('http://127.0.0.1:8000/api/auth/register/employer/', formData);
+            const response = await axios.post('https://swahilipot.up.railway.app/auth/register/employer/', formData);
             
             if (response.ok){
                 router.push('/seeker/dashboard/')
