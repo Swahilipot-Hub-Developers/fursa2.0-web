@@ -14,15 +14,12 @@ const Home = () => {
       </Head>
       <div className='bg-image-wrapper'>
         <Image
-
           src="/images/mombasa.png"
-          // width={600}
-          // height={500}
+          //width={600}
+          //height={500}
           quality ='100'
           alt="mombasa"
-          layout='fill'
-          // className="img-fluid "
-          
+          layout="fill"
         />
       </div>
       <Hero />

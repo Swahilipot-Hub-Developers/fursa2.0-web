@@ -1,6 +1,6 @@
 const Opportunities = () => {
     return (
-        <div className="bg-white"> 
+        <div className="bg-white py-4"> 
         <div className=" container text-center pt-3 pb-2">
             <h1 className="display-6 px-5 fw-bold text-primary">
                 Are you in Mombasa and looking

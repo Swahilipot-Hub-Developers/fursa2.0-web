@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Acknowledge = () => {
     return (
-        <div className="bg-light">
+        <div className="bg-light py-5">
             <div className="container d-md-flex pt-3">
             <div className="col-12 col-md-6">
                 <h2 className="fw-bold">HE. Abdulswamad Shariff Nassir</h2>

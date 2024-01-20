@@ -119,15 +119,15 @@ main {
 
 /* FAQ Section */
 .tab-title {
-  border: 1px solid #ddd;
+  border: none;
+  box-shadow: 5px black;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 30px;
   cursor: pointer;
 }
 
 .tab-title.active {
-  background-color: #f1f1f1;
-  transition: 0.2s background-color ease-in-out;
+  color: white;
 }
 
 .toggle-icon {
@@ -141,13 +141,12 @@ main {
 
 .tab-content {
   display: none;
-  padding: 10px;
+  padding: 30px 0 0;
 }
 
 .tab-content.active {
   display: block;
 }
-
 
 .card-emp{ 
   max-width: 18rem;
@@ -205,6 +204,18 @@ main {
   margin: 0;
   padding: 0;
   z-index: -1;
+}
+
+.icon{
+  transition: box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.icon:hover{
+  background: white;
+  color: green;
+  transition: background 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 /* Media query for smaller screens */
