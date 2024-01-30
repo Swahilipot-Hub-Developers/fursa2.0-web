@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Navbar, Nav } from 'react-bootstrap';
 
 const NavBar = () => {
@@ -18,11 +19,11 @@ const NavBar = () => {
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/">Partnerships</Nav.Link>
           <Nav.Link href="/profile" >Sign In</Nav.Link>
-          <a href="/profile" className="m-0 p-0">
+          <Link href="/profile" className="m-0 p-0">
             <button className="btn btn-success p-2">
               Create an account
             </button>
-          </a>
+          </Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
