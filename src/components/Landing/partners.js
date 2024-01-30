@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 const Partners = () => {
     return (
-       <div className="bg-light"> 
-         <div className="pt-3">
+       <div className="bg-light py-5"> 
+         <div>
             <div className="text-center mb-5">
                 <h2 className="fw-bold">Our Partners</h2>
             </div>

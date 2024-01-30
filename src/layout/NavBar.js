@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Navbar, Nav } from 'react-bootstrap';
 
 const NavBar = () => {
@@ -14,13 +15,15 @@ const NavBar = () => {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarNav" />
       <Navbar.Collapse id="navbarNav" className="justify-content-end">
-        <Nav className="ml-auto">
+        <Nav className="ml-auto gap-2">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/">Partnerships</Nav.Link>
-          <Nav.Link  href="/profile" >Sign In</Nav.Link>
-          <Nav.Link href="/profile" style={{ backgroundColor: '#74C850', color: 'black' }}>
-            Create an account
-          </Nav.Link>
+          <Nav.Link href="/profile" >Sign In</Nav.Link>
+          <Link href="/profile" className="m-0 p-0">
+            <button className="btn btn-success p-2">
+              Create an account
+            </button>
+          </Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

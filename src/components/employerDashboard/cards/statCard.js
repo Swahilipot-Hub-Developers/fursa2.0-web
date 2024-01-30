@@ -25,7 +25,7 @@ const StatCard = () => {
     <div className="card">
       <div className="card-body">
         <h5 className="card-title display-5">{jobCount}</h5>
-        <p className="card-text">Total Jobs</p>
+        <p className="card-text">Total jobs created</p>
       </div>
     </div>
   );

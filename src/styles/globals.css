@@ -3,6 +3,9 @@
 * for the sidebar. Make a point of reference to avoid altering
 * and messing up the styles.
 */
+body{
+  background: #FAF9F6;
+}
 
 main {
   min-height: 73vh;
@@ -63,6 +66,7 @@ main {
   background-color: #f8f9fa;
   padding-top: 20px;
   transition: width 0.3s;
+  text-decoration: none;
 }
 
 /* Toggling the minimization of the sidebar by reducing the width */
@@ -93,7 +97,6 @@ main {
   z-index: 1;
 }
 /*End of Sidebar Styling*/
-
 .nav-link {
   position: relative;
   text-decoration: none;
@@ -119,15 +122,15 @@ main {
 
 /* FAQ Section */
 .tab-title {
-  border: 1px solid #ddd;
+  border: none;
+  box-shadow: 5px black;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 30px;
   cursor: pointer;
 }
 
 .tab-title.active {
-  background-color: #f1f1f1;
-  transition: 0.2s background-color ease-in-out;
+  color: white;
 }
 
 .toggle-icon {
@@ -141,13 +144,12 @@ main {
 
 .tab-content {
   display: none;
-  padding: 10px;
+  padding: 30px 0 0;
 }
 
 .tab-content.active {
   display: block;
 }
-
 
 .card-emp{ 
   max-width: 18rem;
@@ -185,6 +187,7 @@ main {
 .bg-hero{
   position: relative;
 }
+
 .overlay{
   top: 0;
   left: 0;
@@ -205,6 +208,18 @@ main {
   margin: 0;
   padding: 0;
   z-index: -1;
+}
+
+.icon{
+  transition: box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.icon:hover{
+  background: white;
+  color: green;
+  transition: background 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 /* Media query for smaller screens */

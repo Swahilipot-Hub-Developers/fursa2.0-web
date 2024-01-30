@@ -12,7 +12,7 @@ const JobApplicationsSection = () => {
     const fetchData = async () => {
       try {
         const jobResponse = await axios.get(
-          "http://127.0.0.1:8000/api/fursa/opportunity/jobs/"
+          "http://swahilipot.up.railway.app/api/fursa/opportunity/jobs/"
         );
         setJobData(jobResponse.data);
 

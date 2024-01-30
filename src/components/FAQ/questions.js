@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaDownLong } from 'react-icons/fa6';
 
 const Questions = ({title, content}) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -8,16 +9,13 @@ const Questions = ({title, content}) => {
     };
 
     return (
-        <div className={`tab-title ${isExpanded ? 'active' : ''}`} role="tab" aria-expanded={isExpanded} aria-selected={isExpanded}>
+        <div className={`tab-title ${isExpanded ? 'active' : ''} shadow rounded col-12 col-md-6 mx-auto`} role="tab" aria-expanded={isExpanded} aria-selected={isExpanded}>
             <span className="toggle-icon toggle-icon-right" aria-hidden="false">
                 <span className="toggle-icon-closed">
-                    <i className="fas fa-caret-right"></i>
-                </span>
-                <span className="toggle-icon-opened">
-                    <i className="toggle-icon-opened fas fa-caret-up"></i>
+                    <FaDownLong/>
                 </span>
             </span>
-            <p className="m-0 toggle-title" onClick={toggleAccordion}>
+            <p className="m-0 text-white fw-bold toggle-title" onClick={toggleAccordion}>
                 {title}
             </p>
             <div className={`tab-content ${isExpanded ? 'active' : ''}`} id="tab-content">

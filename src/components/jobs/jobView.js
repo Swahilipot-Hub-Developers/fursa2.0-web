@@ -2,7 +2,7 @@ import JobCard from "./jobCard";
 
 const JobView = () => {
   return (
-    <div className="">
+    <div>
       <JobCard />
     </div>
   );

@@ -25,7 +25,7 @@ const ViewApplicationsPage = () => {
   const [applicationsData, setApplicationsData] = useState(mockApplicationsData);
 
   return (
-    <div>
+    <div className="my-4">
       <h2>View Applications</h2>
       <table className="table table-hover">
         <thead>
