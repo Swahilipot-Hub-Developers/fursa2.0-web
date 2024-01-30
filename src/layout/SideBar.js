@@ -37,8 +37,8 @@ const Sidebar = ({ isMinimized }) => {
 
   return (
     <>
-      <div className={`sidebar ${isMinimized ? 'minimized' : ''} ${isOffcanvasOpen ? 'open' : ''}`}>
-        <ListGroup className="mt-3">
+      <div className={`sidebar shadow ${isMinimized ? 'minimized' : ''} ${isOffcanvasOpen ? 'open' : ''}`}>
+        <ListGroup variant="flush" className="mt-3">
           {sidebarItems.map((item) => (
             <Link key={item.href} href={item.href}>
               <ListGroup.Item

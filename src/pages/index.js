@@ -27,7 +27,6 @@ const Home = () => {
       <Opportunities />
       <Partners />
       <FAQ />
-
     </>
   )
 }

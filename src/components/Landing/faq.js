@@ -1,4 +1,4 @@
-import { FaFacebook, FaXTwitter, FaInstagram, FaYoutube } from "react-icons/fa6";
+//import { FaFacebook, FaXTwitter, FaInstagram, FaYoutube } from "react-icons/fa6";
 import Questions from "../FAQ/questions";
 
 const FAQ = () => {
@@ -10,12 +10,12 @@ const FAQ = () => {
                     For any inquiries, reach out to us via
                     info@fursa.or.ke
                 </h1>
-                <div className="d-flex justify-content-center gap-5 text-white">
+                {/*<div className="d-flex justify-content-center gap-5 text-white">
                     <div className="shadow rounded p-3 icon"><FaFacebook /></div>
                     <div className="shadow rounded p-3 icon"><FaXTwitter /></div>
                     <div className="shadow rounded p-3 icon"><FaInstagram /></div>
                     <div className="shadow rounded p-3 icon"><FaYoutube /></div>
-                </div>
+                </div>*/}
             </div>
             <div>
                 <div className="text-center text-white py-5">

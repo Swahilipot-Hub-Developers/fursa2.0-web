@@ -32,10 +32,10 @@ const Jobs = () => {
   };
 
   return (
-    <div>
-      <h1>Displaying list of jobs here</h1>
+    <div className="my-4">
+      <h1 className="mb-4">Displaying list of jobs here</h1>
       <JobSearchBox onSearch={handleSearch} />
-      <ul>
+      <ul className="mb-3">
         {filteredJobs.map((job, index) => (
           <li key={index}>
             <Link href={`/seeker/jobs/${job.id}`} legacyBehavior>

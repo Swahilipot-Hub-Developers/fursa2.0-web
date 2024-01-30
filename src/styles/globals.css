@@ -3,6 +3,9 @@
 * for the sidebar. Make a point of reference to avoid altering
 * and messing up the styles.
 */
+body{
+  background: #FAF9F6;
+}
 
 main {
   min-height: 73vh;
@@ -63,6 +66,7 @@ main {
   background-color: #f8f9fa;
   padding-top: 20px;
   transition: width 0.3s;
+  text-decoration: none;
 }
 
 /* Toggling the minimization of the sidebar by reducing the width */
@@ -93,7 +97,6 @@ main {
   z-index: 1;
 }
 /*End of Sidebar Styling*/
-
 .nav-link {
   position: relative;
   text-decoration: none;
@@ -184,6 +187,7 @@ main {
 .bg-hero{
   position: relative;
 }
+
 .overlay{
   top: 0;
   left: 0;

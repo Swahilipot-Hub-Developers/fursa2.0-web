@@ -4,7 +4,7 @@ import Header from '@/components/employerDashboard/dashMsg';
 
 const Dashboard = () => {
   return (
-    <div>      
+    <div className="my-4">      
       <Header/>
       <CardsList/>
       <EmployerTable/>

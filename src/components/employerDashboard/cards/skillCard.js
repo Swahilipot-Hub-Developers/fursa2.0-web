@@ -23,7 +23,7 @@ const SkillNum = () => {
     <div className="card">
       <div className="card-body">
         <h5 className="card-title display-5">{totalSkills}</h5>
-        <p className="card-text">Total Skills</p>
+        <p className="card-text">Total skills allocated</p>
       </div>
     </div>
   );
